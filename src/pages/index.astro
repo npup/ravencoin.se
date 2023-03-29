@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content";
+import Article from "../components/astro/Article.astro";
+import Layout from "../layouts/BaseLayout.astro";
+
+const allArticles = await getCollection("articles");
+const shownArticles = allArticles.filter((article) => !article.data.hidden);
+---
+
+<Layout>
+    {
+        shownArticles.map(async (article) => {
+            return <Article entry={article} />;
+        })
+    }
+</Layout>

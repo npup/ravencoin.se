@@ -1,0 +1,46 @@
+:root {
+    --primary-color-dark: hsl(205deg, 20%, 94%);
+    --font-family: "Quicksand";
+    --hero-color: hotpink;
+}
+
+html,
+html *,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Quicksand", sans-serif !important;
+}
+
+h1 {
+    background: -webkit-linear-gradient(
+        var(--hero-color),
+        var(--primary-color-dark)
+    );
+    background: linear-gradient(var(--hero-color), var(--primary-color-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+c-subtitle {
+    color: var(--color);
+    display: block;
+    font-family: monospace;
+    font-size: 60%;
+    font-style: italic;
+}
+
+@media screen and (min-width: 1023px) {
+    h1 {
+        font-size: 500%;
+    }
+}

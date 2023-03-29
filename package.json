@@ -1,0 +1,19 @@
+{
+    "name": "@example/minimal",
+    "type": "module",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "astro": "^2.1.8"
+    },
+    "devDependencies": {
+        "astro": "^2.1.8"
+    },
+    "scripts": {
+        "start": "astro dev",
+        "build": "astro build",
+        "prebuild": "npm run clean",
+        "clean": "rm -rf dist",
+        "astro:sync": "astro sync"
+    }
+}

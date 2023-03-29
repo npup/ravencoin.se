@@ -1,0 +1,34 @@
+---
+import { CollectionEntry } from "astro:content";
+
+interface Props {
+    hero?: boolean;
+    entry: CollectionEntry<"articles">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<article class={entry.data.hero ? "hero" : ""}>
+    <Content />
+</article>
+
+<style>
+    article {
+        background: radial-gradient(
+            circle at right top,
+            #111111 8%,
+            #111111 16%,
+            black 61%
+        );
+    }
+    .hero {
+        background: radial-gradient(
+            circle at right top,
+            var(--hero-color) 8%,
+            var(--hero-color) 16%,
+            black 61%
+        );
+    }
+</style>
